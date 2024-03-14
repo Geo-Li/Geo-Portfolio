@@ -1,4 +1,6 @@
 import React from "react";
+import Timeline from "./Timeline";
+import Title from "./Title";
 
 const Contact = () => {
   return (
@@ -9,10 +11,11 @@ const Contact = () => {
           action="https://getform.io/f/wardkgea"
           method="POST"
         >
+          <Title>Contact</Title>
           <input
             className="p-2 bg-transparent 
                        border-2 rounded-md 
-                       focus: outline-none"
+                       focus:outline-none"
             type="text"
             name="name"
             placeholder="Name"

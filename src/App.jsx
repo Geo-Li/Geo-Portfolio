@@ -11,11 +11,11 @@ function App() {
 
   return (
     <div>
-      <Contact/>
-      <Footer/>
       <Intro/>
       <Portfolio/>
       <Timeline/>
+      <Contact/>
+      <Footer/>
     </div>
   )
 }

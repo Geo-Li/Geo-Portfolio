@@ -6,7 +6,7 @@ const Footer = () => {
       {}
       <p className="text-sm mt-2 opacity-50">
         &copy; {new Date().getFullYear()}
-        Zhuoyuan (Geo) Li. All rights reserved.
+        {} Zhuoyuan (Geo) Li. All rights reserved.
       </p>
     </div>
   );

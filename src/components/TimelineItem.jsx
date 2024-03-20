@@ -5,7 +5,7 @@ const TimelineItem = ({ year, title, duration, details }) => {
     <div>
       <ol
         className="flex flex-col md:flex-row 
-                   relative border-1 border-stone-200
+                   relative border-l border-stone-200
                    dark:border-stone-700"
       >
         <li className="mb-10 ml-4">
@@ -16,13 +16,13 @@ const TimelineItem = ({ year, title, duration, details }) => {
                      border-white dark:border-stone-900
                      dark:bg-stone-700"
           />
-          <p
+          <div
             className="flex flex-wrap gap-4 
                        flex-row items-center 
                        justify-start text-xs 
                        md:text-sm"
           >
-            <span
+            {year && <span
               className="inline-block px-2 
                          py-1 font-semibold 
                        text-white dark:text-stone-900
@@ -30,7 +30,7 @@ const TimelineItem = ({ year, title, duration, details }) => {
                          rounded-md"
             >
               {year}
-            </span>
+            </span>}
             <h3
               className="text-lg font-semibold 
                        text-stone-900
@@ -45,7 +45,7 @@ const TimelineItem = ({ year, title, duration, details }) => {
             >
               {duration}
             </div>
-          </p>
+          </div>
           <p
             className="my-2 text-base 
                        font-normal text-stone-500

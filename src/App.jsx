@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Contact from "./components/Contact";
+import Skill from "./components/Skill";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
 import Portfolio from "./components/Portfolio";
@@ -82,6 +83,7 @@ function App() {
       >
         <div className="max-w-5xl w-11/12 mx-auto">
           <Intro />
+          <Skill />
           <Portfolio />
           <Timeline />
           <Contact />

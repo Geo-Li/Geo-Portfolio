@@ -14,7 +14,7 @@ const PortfolioItem = ({ title, imgURL, stack, link }) => {
         src={imgURL}
         alt="title"
         className="w-full h-36 md:h-48 
-                   object-cover cursor-pointer"
+                   object-contain cursor-pointer"
       />
       <div className="w-full p-4">
         <h3 className="text-lg md:text-xl dark:text-white

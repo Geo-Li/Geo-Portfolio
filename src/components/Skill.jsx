@@ -7,7 +7,7 @@ const Skill = () => {
   return (
     <div className="flex items-center justify-center mb-10 mx-auto">
       <div
-        className="w-full p-4 text-center 
+        className="w-full text-center 
                  border border-stone-900
                  rounded-lg shadow sm:p-8 
                dark:border-white"

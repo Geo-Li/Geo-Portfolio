@@ -2,15 +2,15 @@ import React from "react";
 
 const SkillItem = ({ category, sets }) => {
   return (
-    <div className="flex flex-row items-center gap-2">
+    <div className="grid grid-cols-3 items-center gap-4 mb-4">
       <h3
-        className="w-64 text-lg md:text-xl dark:text-white
-                   mb-1 md:mb-2 mr-1 md:mr-2 font-semibold flex-shrink-0"
+        className="col-span-1 text-lg md:text-xl dark:text-white
+                   mb-2 md:mb-4 mr-1 md:mr-2 font-semibold"
       >
         {category}
       </h3>
       <div
-        className="flex flex-wrap gap-2 flex-row 
+        className="col-span-2 flex flex-wrap gap-2
                    items-center justify-center 
                    text-xs md:text-sm dark:text-white"
       >
@@ -20,7 +20,7 @@ const SkillItem = ({ category, sets }) => {
             className="inline-flex items-center 
                        justify-center px-2 py-1 
                        font-semibold border-2 
-                       dark:border-white
+                       dark:border-white mb-2
                        border-stone-900 rounded-md"
           >
             {item}

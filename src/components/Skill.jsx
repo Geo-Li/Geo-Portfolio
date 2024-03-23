@@ -9,11 +9,11 @@ const Skill = () => {
       <div
         className="w-full text-center 
                  border border-stone-900
-                 rounded-lg shadow sm:p-8 
-               dark:border-white"
+                 rounded-lg shadow sm:p-6 
+               dark:border-white p-4"
       >
         <h5
-          className="mb-2 text-2xl md:text-3xl font-bold 
+          className="mb-4 md:mb-8 text-2xl md:text-3xl font-bold 
                    text-gray-900 dark:text-white"
         >
           Skills

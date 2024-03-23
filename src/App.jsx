@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Contact from "./components/Contact";
-import Skill from "./components/Skill";
-import Footer from "./components/Footer";
+import Banner from "./components/Banner";
 import Intro from "./components/Intro";
+import Skill from "./components/Skill";
 import Portfolio from "./components/Portfolio";
 import Timeline from "./components/Timeline";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+
 
 function App() {
   // TODO: make dark mode switching based on the real time
@@ -82,6 +84,7 @@ function App() {
                     min-h-screen font-inter"
       >
         <div className="max-w-5xl w-11/12 mx-auto">
+          <Banner/>
           <Intro />
           <Skill />
           <Portfolio />

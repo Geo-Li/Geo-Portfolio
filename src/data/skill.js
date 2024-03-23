@@ -12,7 +12,7 @@ export default [
   {
     id: "data analysis",
     category: "ML/AI",
-    sets: ["PyTorch", "SciKit", "Numpy", "Jupyter Notebook"],
+    sets: ["PyTorch", "scikit-learn", "Numpy", "Jupyter Notebook"],
   },
   {
     id: "database",

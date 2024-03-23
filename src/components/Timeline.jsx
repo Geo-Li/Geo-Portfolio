@@ -13,6 +13,7 @@ const Timeline = () => {
             year={item.year}
             title={item.title}
             duration={item.duration}
+            institution={item.institution}
             details={item.details}
           />
         ))}

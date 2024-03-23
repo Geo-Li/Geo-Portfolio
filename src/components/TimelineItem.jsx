@@ -1,6 +1,6 @@
 import React from "react";
 
-const TimelineItem = ({ year, title, duration, details }) => {
+const TimelineItem = ({ year, title, duration, institution, details }) => {
   return (
     <div>
       <ol
@@ -45,6 +45,9 @@ const TimelineItem = ({ year, title, duration, details }) => {
             >
               {duration}
             </div>
+          </div>
+          <div className="ml-10 my-2 font-semibold">
+            @ {institution}
           </div>
           <p
             className="my-2 text-base 

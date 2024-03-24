@@ -1,4 +1,6 @@
 import React from "react";
+import banner from "../data/banner";
+import BannerItem from "./BannerItem";
 
 const Banner = () => {
   return (
@@ -11,7 +13,7 @@ const Banner = () => {
                    dark:border-green-800"
         role="alert"
       >
-        <span class="sr-only">Info</span>
+        <span className="sr-only">Info</span>
         <div>
           <svg
             className="flex-shrink-0 inline w-4 h-4 me-3"
@@ -26,28 +28,14 @@ const Banner = () => {
             Some features are still under development and listed are future
             development plans:
           </span>
-          <ul class="mt-1.5 list-disc list-inside pl-8">
-            <li>
-              Contact functionality is currently malfunctioning, and I need to
-              resolve this issue promptly so that I can receive messages from
-              others
-            </li>
-            <li>
-              Add a confirmation alert to the Contact component, so that when a
-              message is sent, a confirmation will appear
-            </li>
-            <li>
-              Include links to my resume and contact information, such as
-              LinkedIn, WeChat, email, etc.
-            </li>
-            <li>
-              Change these list items into checkboxes? Let me know which way you
-              think is better.
-            </li>
-            <li>
-              Enhance this portfolio by adding additional projects and
-              experiences
-            </li>
+          <ul className="mt-1.5 list-disc list-inside pl-8">
+            {banner.map((item, index) => (
+              <BannerItem
+                id={index}
+                finished={item.finished}
+                plan={item.plan}
+              />
+            ))}
           </ul>
         </div>
       </div>

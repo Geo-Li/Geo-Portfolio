@@ -5,7 +5,7 @@ export default [
         resolve this issue promptly so that I can receive messages from others",
   },
   {
-    finished: false,
+    finished: true,
     plan: "Add a confirmation alert to the Contact component, so that when a\
     message is sent, a confirmation will appear",
   },

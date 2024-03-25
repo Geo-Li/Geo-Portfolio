@@ -9,7 +9,7 @@ const Banner = () => {
         className="flex items-center p-4 text-sm
                    text-green-900 border rounded-lg 
                    border-green-500 bg-green-100 
-                   dark:bg-gray-800 dark:text-green-400 
+                   dark:bg-gray-600 dark:text-green-400 
                    dark:border-green-800"
         role="alert"
       >

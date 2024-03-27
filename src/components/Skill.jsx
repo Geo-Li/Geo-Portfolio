@@ -1,7 +1,6 @@
 import React from "react";
 import skill from "../data/skill";
 import SkillItem from "./SkillItem";
-import Title from "./Title";
 
 const Skill = () => {
   return (

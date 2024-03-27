@@ -6,9 +6,11 @@ const Footer = () => {
   const UCIemail = "zhuoyul4@uci.edu";
   const NUemail = "ZhuoyuanLi2025@u.northwestern.edu";
   const personalEmail = "KyriePrise@gmail.com";
+  const personalPhone = "949-351-8850";
 
   const [displayWechat, setDisplayWechat] = useState(false);
   const [displayEmail, setDisplayEmail] = useState(false);
+  const [displayPhone, setDisplayPhone] = useState(false);
   const [copied, setCopied] = useState(false);
 
   function showWechatAlert() {
@@ -25,6 +27,14 @@ const Footer = () => {
 
   function closeEmailAlert() {
     setDisplayEmail(false);
+  }
+
+  function showPhoneAlert() {
+    setDisplayPhone(true);
+  }
+
+  function closePhoneAlert() {
+    setDisplayPhone(false);
   }
 
   function copyToClipboard(text) {
@@ -86,7 +96,13 @@ const Footer = () => {
                 >
                   {wechat}
                 </button>
-                {copied && <div className="notification">Copied</div>}
+                <div
+                  role="tooltip"
+                  className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip"
+                >
+                  Copied
+                  <div className="tooltip-arrow" data-popper-arrow></div>
+                </div>
               </div>
               <button
                 type="button"
@@ -185,6 +201,72 @@ const Footer = () => {
               <button
                 type="button"
                 onClick={closeEmailAlert}
+                className="ml-1.5 -mr-1.5 -my-1.5 bg-green-50 
+                         text-green-500 rounded-lg focus:ring-2 
+                         focus:ring-green-400 p-1.5 
+                         hover:bg-green-200 inline-flex 
+                         items-center justify-center h-8 w-8 
+                         dark:bg-gray-600 dark:text-green-400 
+                         dark:hover:bg-gray-800"
+                aria-label="Close"
+              >
+                <span className="sr-only">Close</span>
+                <svg
+                  className="w-3 h-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 14"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    stroke-width="2"
+                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
+        <button onClick={showPhoneAlert} className="text-black dark:text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            className="w-10 h-10 fill-current"
+          >
+            <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+          </svg>
+        </button>
+        {displayPhone && (
+          <div
+            className="fixed top-1/2 left-1/2 p-8 transform 
+                 -translate-x-1/2 -translate-y-1/2 z-50 
+                 border text-green-800 rounded-lg bg-green-50 
+                 dark:bg-gray-600 dark:text-green-400
+                 border-green-500 dark:border-green-800"
+            role="alert"
+          >
+            <div className="flex justify-center items-center">
+              <span className="sr-only">
+                Please reach out to me at this phone number:
+                {personalPhone}
+              </span>
+              <div className="text-center">
+                <p>Please reach out to me at this phone number:</p>
+                <span>
+                  <button
+                    className="text-lg font-semibold underline"
+                    onClick={copyToClipboard(personalPhone)}
+                  >
+                    {personalPhone}
+                  </button>
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={closePhoneAlert}
                 className="ml-1.5 -mr-1.5 -my-1.5 bg-green-50 
                          text-green-500 rounded-lg focus:ring-2 
                          focus:ring-green-400 p-1.5 

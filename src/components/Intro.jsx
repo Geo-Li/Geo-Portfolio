@@ -8,19 +8,22 @@ const Intro = () => {
     >
       <h1
         className="text-4xl md:text-7xl dark:text-white 
-                     mb-1 md:mb-3 font-bold"
+                     mb-1 md:mb-3 font-semibold"
       >
         Zhuoyuan (Geo) Li
       </h1>
       <p className="text-base md:text-xl mb-3 font-medium">
         Software Engineer & Game Developer
       </p>
-      <p className="text-sm max-w-xl mb-6 font-bold">
+      <p className="text-sm max-w-xl mb-6 font-semibold">
         Hello, I'm Zhuoyuan (Geo) Li, a dedicated Computer Science graduate
         student at Northwestern University with a specialization in Artificial
         Intelligence. I'm actively seeking software engineering internships,
         leveraging my strong background in software development and backend
-        management. My experience includes working on web development projects
+        management. 
+        <br />
+        <br />
+        My experience includes working on web development projects
         during internships and engaging in research where I applied AI models to
         detect adversarial attacks. I am passionate about continuous learning
         and am always eager to acquire new skills to become a proficient

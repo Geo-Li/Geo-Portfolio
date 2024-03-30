@@ -50,6 +50,206 @@ const Footer = () => {
       .catch((err) => console.error("Could not copy text: ", err));
   }
 
+  const Alerts = ({
+    displayWechat,
+    displayEmail,
+    displayPhone,
+    copyToClipboard,
+    closeWechatAlert,
+    closeEmailAlert,
+    closePhoneAlert,
+  }) => {
+    return (
+      <div
+        className="alerts-container fixed top-1/2 left-1/2 z-50
+                   transform -translate-x-1/2 -translate-y-1/2"
+      >
+        <div className="grid grid-rows-3 gap-4">
+          {displayWechat && (
+            <div
+              className="alert p-8
+                 border text-green-800 rounded-lg bg-green-50 
+                 dark:bg-gray-600 dark:text-green-400
+                 border-green-500 dark:border-green-800"
+              role="alert"
+            >
+              <div className="flex justify-center items-center">
+                <div className="text-center">
+                  <span className="sr-only">
+                    Please reach out to me on WeChat using the ID: ZhuoyuanGeoLi
+                  </span>
+                  <p>Please reach out to me on WeChat using the ID:</p>
+                  <button
+                    className="text-lg font-semibold underline"
+                    onClick={copyToClipboard(wechat)}
+                  >
+                    {wechat}
+                  </button>
+                </div>
+                <button
+                  type="button"
+                  onClick={closeWechatAlert}
+                  className="ml-1.5 -mr-1.5 -my-1.5 bg-green-50 
+                         text-green-500 rounded-lg focus:ring-2 
+                         focus:ring-green-400 p-1.5 
+                         hover:bg-green-200 inline-flex 
+                         items-center justify-center h-8 w-8 
+                         dark:bg-gray-600 dark:text-green-400 
+                         dark:hover:bg-gray-800"
+                  aria-label="Close"
+                >
+                  <span className="sr-only">Close</span>
+                  <svg
+                    className="w-3 h-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      stroke-width="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          )}
+          {displayEmail && (
+            <div
+              className="alert p-8
+                 border text-green-800 rounded-lg bg-green-50 
+                 dark:bg-gray-600 dark:text-green-400
+                 border-green-500 dark:border-green-800"
+              role="alert"
+            >
+              <div className="flex justify-center items-center">
+                <span className="sr-only">
+                  Please reach out to me via e-mail at:
+                  ZhuoyuanLi2025@u.northwestern.edu
+                </span>
+                <div className="text-center">
+                  <p>Please reach out to me via e-mail at:</p>
+                  <span>
+                    <div className="italic">School email:</div>
+                    <button
+                      className="text-lg font-semibold underline"
+                      onClick={copyToClipboard(NUemail)}
+                    >
+                      {NUemail}
+                    </button>
+                    <br />
+                    <button
+                      className="text-lg font-semibold underline"
+                      onClick={copyToClipboard(UCIemail)}
+                    >
+                      {UCIemail}
+                    </button>
+                    <div className="italic">Personal email:</div>
+                    <button
+                      className="text-lg font-semibold underline"
+                      onClick={copyToClipboard(personalEmail)}
+                    >
+                      {personalEmail}
+                    </button>
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={closeEmailAlert}
+                  className="ml-1.5 -mr-1.5 -my-1.5 bg-green-50 
+                         text-green-500 rounded-lg focus:ring-2 
+                         focus:ring-green-400 p-1.5 
+                         hover:bg-green-200 inline-flex 
+                         items-center justify-center h-8 w-8 
+                         dark:bg-gray-600 dark:text-green-400 
+                         dark:hover:bg-gray-800"
+                  aria-label="Close"
+                >
+                  <span className="sr-only">Close</span>
+                  <svg
+                    className="w-3 h-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      stroke-width="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          )}
+          {displayPhone && (
+            <div
+              className="alert p-8
+                 border text-green-800 rounded-lg bg-green-50 
+                 dark:bg-gray-600 dark:text-green-400
+                 border-green-500 dark:border-green-800"
+              role="alert"
+            >
+              <div className="flex justify-center items-center">
+                <span className="sr-only">
+                  Please reach out to me at this phone number:
+                  {personalPhone}
+                </span>
+                <div className="text-center">
+                  <p>Please reach out to me at this phone number:</p>
+                  <span>
+                    <button
+                      className="text-lg font-semibold underline"
+                      onClick={copyToClipboard(personalPhone)}
+                    >
+                      {personalPhone}
+                    </button>
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={closePhoneAlert}
+                  className="ml-1.5 -mr-1.5 -my-1.5 bg-green-50 
+                         text-green-500 rounded-lg focus:ring-2 
+                         focus:ring-green-400 p-1.5 
+                         hover:bg-green-200 inline-flex 
+                         items-center justify-center h-8 w-8 
+                         dark:bg-gray-600 dark:text-green-400 
+                         dark:hover:bg-gray-800"
+                  aria-label="Close"
+                >
+                  <span className="sr-only">Close</span>
+                  <svg
+                    className="w-3 h-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      stroke-width="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="flex items-center gap-4 md:gap-8 pt-8 pb-2">
@@ -104,60 +304,6 @@ const Footer = () => {
             <path d="M385.2 167.6c6.4 0 12.6 .3 18.8 1.1C387.4 90.3 303.3 32 207.7 32 100.5 32 13 104.8 13 197.4c0 53.4 29.3 97.5 77.9 131.6l-19.3 58.6 68-34.1c24.4 4.8 43.8 9.7 68.2 9.7 6.2 0 12.1-.3 18.3-.8-4-12.9-6.2-26.6-6.2-40.8-.1-84.9 72.9-154 165.3-154zm-104.5-52.9c14.5 0 24.2 9.7 24.2 24.4 0 14.5-9.7 24.2-24.2 24.2-14.8 0-29.3-9.7-29.3-24.2 .1-14.7 14.6-24.4 29.3-24.4zm-136.4 48.6c-14.5 0-29.3-9.7-29.3-24.2 0-14.8 14.8-24.4 29.3-24.4 14.8 0 24.4 9.7 24.4 24.4 0 14.6-9.6 24.2-24.4 24.2zM563 319.4c0-77.9-77.9-141.3-165.4-141.3-92.7 0-165.4 63.4-165.4 141.3S305 460.7 397.6 460.7c19.3 0 38.9-5.1 58.6-9.9l53.4 29.3-14.8-48.6C534 402.1 563 363.2 563 319.4zm-219.1-24.5c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.8 0 24.4 9.7 24.4 19.3 0 10-9.7 19.6-24.4 19.6zm107.1 0c-9.7 0-19.3-9.7-19.3-19.6 0-9.7 9.7-19.3 19.3-19.3 14.5 0 24.4 9.7 24.4 19.3 .1 10-9.9 19.6-24.4 19.6z" />
           </svg>
         </button>
-        {displayWechat && (
-          <div
-            className="fixed top-1/2 left-1/2 p-8 transform 
-                 -translate-x-1/2 -translate-y-1/2 z-50 
-                 border text-green-800 rounded-lg bg-green-50 
-                 dark:bg-gray-600 dark:text-green-400
-                 border-green-500 dark:border-green-800"
-            role="alert"
-          >
-            <div className="flex justify-center items-center">
-              <div className="text-center">
-                <span className="sr-only">
-                  Please reach out to me on WeChat using the ID: ZhuoyuanGeoLi
-                </span>
-                <p>Please reach out to me on WeChat using the ID:</p>
-                <button
-                  className="text-lg font-semibold underline"
-                  onClick={copyToClipboard(wechat)}
-                >
-                  {wechat}
-                </button>
-              </div>
-              <button
-                type="button"
-                onClick={closeWechatAlert}
-                className="ml-1.5 -mr-1.5 -my-1.5 bg-green-50 
-                         text-green-500 rounded-lg focus:ring-2 
-                         focus:ring-green-400 p-1.5 
-                         hover:bg-green-200 inline-flex 
-                         items-center justify-center h-8 w-8 
-                         dark:bg-gray-600 dark:text-green-400 
-                         dark:hover:bg-gray-800"
-                aria-label="Close"
-              >
-                <span className="sr-only">Close</span>
-                <svg
-                  className="w-3 h-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 14"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    stroke-width="2"
-                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        )}
         <button onClick={showEmailAlert} className="text-black dark:text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -167,78 +313,6 @@ const Footer = () => {
             <path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
           </svg>
         </button>
-        {displayEmail && (
-          <div
-            className="fixed top-1/2 left-1/2 p-8 transform 
-                 -translate-x-1/2 -translate-y-1/2 z-50 
-                 border text-green-800 rounded-lg bg-green-50 
-                 dark:bg-gray-600 dark:text-green-400
-                 border-green-500 dark:border-green-800"
-            role="alert"
-          >
-            <div className="flex justify-center items-center">
-              <span className="sr-only">
-                Please reach out to me via e-mail at:
-                ZhuoyuanLi2025@u.northwestern.edu
-              </span>
-              <div className="text-center">
-                <p>Please reach out to me via e-mail at:</p>
-                <span>
-                  <div className="italic">School email:</div>
-                  <button
-                    className="text-lg font-semibold underline"
-                    onClick={copyToClipboard(NUemail)}
-                  >
-                    {NUemail}
-                  </button>
-                  <br />
-                  <button
-                    className="text-lg font-semibold underline"
-                    onClick={copyToClipboard(UCIemail)}
-                  >
-                    {UCIemail}
-                  </button>
-                  <div className="italic">Personal email:</div>
-                  <button
-                    className="text-lg font-semibold underline"
-                    onClick={copyToClipboard(personalEmail)}
-                  >
-                    {personalEmail}
-                  </button>
-                </span>
-              </div>
-              <button
-                type="button"
-                onClick={closeEmailAlert}
-                className="ml-1.5 -mr-1.5 -my-1.5 bg-green-50 
-                         text-green-500 rounded-lg focus:ring-2 
-                         focus:ring-green-400 p-1.5 
-                         hover:bg-green-200 inline-flex 
-                         items-center justify-center h-8 w-8 
-                         dark:bg-gray-600 dark:text-green-400 
-                         dark:hover:bg-gray-800"
-                aria-label="Close"
-              >
-                <span className="sr-only">Close</span>
-                <svg
-                  className="w-3 h-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 14"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    stroke-width="2"
-                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        )}
         <button onClick={showPhoneAlert} className="text-black dark:text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -248,63 +322,15 @@ const Footer = () => {
             <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
           </svg>
         </button>
-        {displayPhone && (
-          <div
-            className="fixed top-1/2 left-1/2 p-8 transform 
-                 -translate-x-1/2 -translate-y-1/2 z-50 
-                 border text-green-800 rounded-lg bg-green-50 
-                 dark:bg-gray-600 dark:text-green-400
-                 border-green-500 dark:border-green-800"
-            role="alert"
-          >
-            <div className="flex justify-center items-center">
-              <span className="sr-only">
-                Please reach out to me at this phone number:
-                {personalPhone}
-              </span>
-              <div className="text-center">
-                <p>Please reach out to me at this phone number:</p>
-                <span>
-                  <button
-                    className="text-lg font-semibold underline"
-                    onClick={copyToClipboard(personalPhone)}
-                  >
-                    {personalPhone}
-                  </button>
-                </span>
-              </div>
-              <button
-                type="button"
-                onClick={closePhoneAlert}
-                className="ml-1.5 -mr-1.5 -my-1.5 bg-green-50 
-                         text-green-500 rounded-lg focus:ring-2 
-                         focus:ring-green-400 p-1.5 
-                         hover:bg-green-200 inline-flex 
-                         items-center justify-center h-8 w-8 
-                         dark:bg-gray-600 dark:text-green-400 
-                         dark:hover:bg-gray-800"
-                aria-label="Close"
-              >
-                <span className="sr-only">Close</span>
-                <svg
-                  className="w-3 h-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 14"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    stroke-width="2"
-                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        )}
+        <Alerts
+          displayWechat={displayWechat}
+          displayEmail={displayEmail}
+          displayPhone={displayPhone}
+          copyToClipboard={copyToClipboard}
+          closeWechatAlert={closeWechatAlert}
+          closeEmailAlert={closeEmailAlert}
+          closePhoneAlert={closePhoneAlert}
+        />
       </div>
       <div className="pb-5 text-center">
         <p className="text-sm mt-2 opacity-50">

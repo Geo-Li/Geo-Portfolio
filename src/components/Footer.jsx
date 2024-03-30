@@ -92,7 +92,7 @@ const Footer = () => {
                   </span>
                   <p>Please reach out to me on WeChat using the ID:</p>
                   <button
-                    className="text-lg font-semibold underline"
+                    className="md:text-lg text-normal font-semibold underline"
                     onClick={copyToClipboard(wechat)}
                   >
                     {wechat}
@@ -148,21 +148,21 @@ const Footer = () => {
                   <span>
                     <div className="italic">School email:</div>
                     <button
-                      className="text-lg font-semibold underline"
+                      className="md:text-lg text-normal font-semibold underline"
                       onClick={copyToClipboard(NUemail)}
                     >
                       {NUemail}
                     </button>
                     <br />
                     <button
-                      className="text-lg font-semibold underline"
+                      className="md:text-lg text-normal font-semibold underline"
                       onClick={copyToClipboard(UCIemail)}
                     >
                       {UCIemail}
                     </button>
                     <div className="italic">Personal email:</div>
                     <button
-                      className="text-lg font-semibold underline"
+                      className="md:text-lg text-normal font-semibold underline"
                       onClick={copyToClipboard(personalEmail)}
                     >
                       {personalEmail}
@@ -218,7 +218,7 @@ const Footer = () => {
                   <p>Please reach out to me at this phone number:</p>
                   <span>
                     <button
-                      className="text-lg font-semibold underline"
+                      className="md:text-lg text-normal font-semibold underline"
                       onClick={copyToClipboard(personalPhone)}
                     >
                       {personalPhone}

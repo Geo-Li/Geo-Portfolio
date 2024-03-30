@@ -14,7 +14,11 @@ const Footer = () => {
   const [copied, setCopied] = useState(false);
 
   function showWechatAlert() {
-    setDisplayWechat(true);
+    if (displayWechat) {
+      setDisplayWechat(false);
+    } else {
+      setDisplayWechat(true);
+    }
   }
 
   function closeWechatAlert() {
@@ -22,7 +26,11 @@ const Footer = () => {
   }
 
   function showEmailAlert() {
-    setDisplayEmail(true);
+    if (displayEmail) {
+      setDisplayEmail(false);
+    } else {
+      setDisplayEmail(true);
+    }
   }
 
   function closeEmailAlert() {
@@ -30,7 +38,11 @@ const Footer = () => {
   }
 
   function showPhoneAlert() {
-    setDisplayPhone(true);
+    if (displayPhone) {
+      setDisplayPhone(false);
+    } else {
+      setDisplayPhone(true);
+    }
   }
 
   function closePhoneAlert() {

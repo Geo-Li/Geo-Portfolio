@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Banner from "./components/Banner";
 import Intro from "./components/Intro";
+import Document from "./components/Document";
 import Skill from "./components/Skill";
 import Portfolio from "./components/Portfolio";
 import Timeline from "./components/Timeline";
@@ -86,6 +87,7 @@ function App() {
         <div className="max-w-5xl w-11/12 mx-auto">
           <Banner/>
           <Intro />
+          <Document />
           <Skill />
           <Portfolio />
           <Timeline />

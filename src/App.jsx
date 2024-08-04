@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
-import Banner from "./components/Banner";
-import Intro from "./components/Intro";
-import Document from "./components/Document";
-import Skill from "./components/Skill";
-import Portfolio from "./components/Portfolio";
-import Timeline from "./components/Timeline";
-import Contact from "./components/Contact";
+import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { sun, moon } from "@/components/icons/Icons";
+import Nav from "@/components/navigation/Nav";
 import Footer from "./components/Footer";
-
+// Import pages
+import AboutPage from "@/pages/about";
+import ContactPage from "@/pages/contact";
+import HomePage from "@/pages/home";
+import ProjectsPage from "@/pages/projects";
+import ResumePage from "@/pages/resume";
+import SchedulePage from "@/pages/schedule";
 
 function App() {
-  // TODO: make dark mode switching based on the real time
   const [theme, setTheme] = useState(null);
 
   useEffect(() => {
@@ -21,10 +22,6 @@ function App() {
     }
   }, []);
 
-  const handleThemeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
-
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -33,69 +30,39 @@ function App() {
     }
   }, [theme]);
 
-  const sun = (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-      className="w-6 h-6"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-      />
-    </svg>
-  );
-
-  const moon = (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="white"
-      className="w-6 h-6"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
-      />
-    </svg>
-  );
+  function handleThemeSwitch() {
+    setTheme(theme === "dark" ? "light" : "dark");
+  }
 
   return (
-    <>
+    <Router>
       <button
-        className="fixed z-10 right-20 
-                   top-4 bg-violet-300 
-                   dark:bg-orange-300
-                   text-lg p-1 rounded-md"
+        className="fixed z-30 right-6 top-6 lg:right-8 lg:top-8
+        bg-violet-300 dark:bg-orange-300 text-lg p-1 rounded-md"
         type="button"
         onClick={handleThemeSwitch}
       >
         {theme === "dark" ? sun : moon}
       </button>
-      <div
-        className="bg-white dark:bg-stone-900 
-                  text-stone-900 dark:text-stone-300
-                    min-h-screen font-inter"
+
+      <main
+        className="bg-color text-stone-900 dark:text-stone-300
+        min-h-screen font-inter"
       >
-        <div className="max-w-5xl w-11/12 mx-auto">
-          <Banner/>
-          <Intro />
-          <Document />
-          <Skill />
-          <Portfolio />
-          <Timeline />
-          <Contact />
+        <Nav />
+        <div className="max-w-5xl w-10/12 mx-auto">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/schedule" element={<SchedulePage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/resume" element={<ResumePage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
           <Footer />
         </div>
-      </div>
-    </>
+      </main>
+    </Router>
   );
 }
 

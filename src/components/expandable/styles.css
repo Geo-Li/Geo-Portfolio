@@ -1,0 +1,17 @@
+.expandable-content {
+  max-height: 1.5em;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+.expandable-content.expand {
+  max-height: 300px;
+}
+
+.readmore-button {
+  transition: transform 250ms ease-in-out;
+}
+
+.readmore-button:hover {
+  transform: scale(1.1);
+}

@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Colors for light and dark themes */
+.text-color {
+  @apply text-stone-900;
+}
+
+.dark .text-color {
+  @apply text-white;
+}
+
+.bg-color {
+  @apply bg-white;
+}
+
+.dark .bg-color {
+  @apply bg-stone-900;
+}
+
+.border-color {
+  @apply border-stone-900;
+}
+
+.dark .border-color {
+  @apply border-white;
+}
+
+/* Border Style */
+.rounded-border {
+  @apply border rounded-md;
+  border: 1.5px solid;
+}
+
+/* Animation for button hovering */
